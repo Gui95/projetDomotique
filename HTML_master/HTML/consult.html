@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Domotique</title>
+		<meta charset="utf-8" />  
+		<link rel="stylesheet" type="text/css" href="style/style.css" />
+		<link href='http://fonts.googleapis.com/css?family=Mr+De+Haviland' rel='stylesheet' type='text/css'>
+		<script type="text/javascript" src="./domotique.js" ></script> 
+	</head>
+	<body>
+		<!-- HEADER -->
+		<div id="header">
+			<div class="titre">
+				<a href="index.html">Domotique</a>
+			</div> <!-- fin de la div titre -->
+
+			<div class="menu">
+				<ul>
+					<li><a href="home.html">Accueil</a></li>
+					<li><a href="consult.html">Consulter</a></li>
+				</ul>
+			</div> <!-- fin de la div menu -->
+		</div> <!-- fin de la div header -->
+		<!-- FIN HEADER -->
+		
+		<!-- CONTENT -->
+		<div id="content">
+			
+			<div id="form-graph">
+					<form>
+						<fieldset id="form-date">
+							<legend>Choix de la période</legend>
+								<div class="radiobutton1">
+									<input id="per-year" 	type="radio" name="date" value="Par-année" checked /> Par année</br>
+									<dd><input type="number" min="2010" max="2020" /></dd>
+								</div> <!-- fin de la div radiobutton1 -->
+								
+								<div class="radiobutton2">
+									<input id="other-date"  type="radio" name="date" value="Autre-période" /> Autre période
+										<dd>Du <input type="date" min="2010-01-01" max="2020-12-31" /> Au <input type="date" min="2010-01-01" max="2020-12-31" /></dd>
+								</div><!-- fin de la div radiobutton2 -->
+						</fieldset>
+
+						<fieldset id="form-sensor">
+							<legend>Choix du/des capteurs</legend>
+								<div class="radiobutton1">
+									<input id="per-sensor" 	type="radio" name="sensor" value="Par-capteur" checked /> Par capteur</br>
+										<dd><input type="checkbox" name="capteur1" value="1"> Capteur 1</dd></br>
+										<dd><input type="checkbox" name="capteur2" value="2"> Capteur 2</dd></br>
+										<dd><input type="checkbox" name="capteur3" value="3"> Capteur 3</dd></br>
+										<dd><input type="checkbox" name="capteur4" value="4"> Capteur 4</dd></br>
+										<dd><input type="checkbox" name="capteur5" value="5"> Capteur 5</dd></br>
+								</div> <!-- fin de la div radiobutton1 -->
+								
+								<div class="radiobutton2">
+									<input id="per-room"  type="radio" name="sensor" value="Par-salle" /> Par salle</br>
+										<dd><input type="checkbox" name="salle1" value="1"> Salle 1</dd></br>
+										<dd><input type="checkbox" name="salle2" value="2"> Salle 2</dd></br>
+										<dd><input type="checkbox" name="salle3" value="3"> Salle 3</dd></br>
+										<dd><input type="checkbox" name="salle4" value="4"> Salle 4</dd></br>
+										<dd><input type="checkbox" name="salle5" value="5"> Salle 5</dd></br>
+								</div> <!-- fin de la div radiobutton2 -->
+								
+								<div class="radiobutton3">
+									<input id="other-room"  type="radio" name="sensor" value="Par-capteur" /> Par type de capteur</br>
+										<dd><input type="checkbox" name="Compteur" value="1"> Compteur</dd></br>
+										<dd><input type="checkbox" name="Mesure" value="2"> Mesure</dd></br>
+										<dd><input type="checkbox" name="Boolean" value="3"> Boolean</dd></br>
+								</div> <!-- fin de la div radiobutton3 -->
+						</fieldset>
+					</form>
+				</div> <!-- fin de la div form-sensor -->
+			</div> <!-- fin de la div form-graph -->
+			
+			<div id="graph">
+				<script src="http://code.highcharts.com/highcharts.js"></script>
+				<script src="http://code.highcharts.com/modules/exporting.js"></script>
+
+				<div id="container" style="min-width: 400px; height: 400px; margin: 0 auto"></div>
+			</div> <!-- fin de la div graph -->
+
+		</div> <!-- FIN CONTENT -->
+		<!-- FIN FOOTER -->
+  	</body>
+  
+</html>

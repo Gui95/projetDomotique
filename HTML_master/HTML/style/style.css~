@@ -1,0 +1,313 @@
+body{
+	background-image:url("../img/bg.jpg");
+	font-family : verdana, sans-serif;
+}
+
+#header{
+	width:950px;
+	margin:auto;
+}
+
+#header .titre{
+	font-family: 'Mr De Haviland', cursive;
+	font-weight:600;
+	font-size:6em;
+	text-align:center;
+}
+
+#header .titre a{
+	color: #88f;
+	text-decoration:none;
+}
+
+#header .menu ul{
+	text-align : center;
+}
+
+#header .menu ul li{
+	display:inline-block;
+	list-style:none;	
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	border: 1px solid #eee;
+	padding: 5px;
+	border-radius: 4px;
+	text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
+	font-size: 20px;
+	text-decoration : none ;
+	background-color:#ddd;
+	-webkit-transition: background-color;
+	-webkit-transition:0.5s;
+	-moz-transition: background-color;
+	-webkit-transition:0.5s;
+	-ms-transition: background-colors;
+	-webkit-transition:0.5s;
+}
+
+#header .menu ul li:hover{
+	background-color:#999;
+}
+
+#header .menu ul li a{
+	text-decoration:none;
+	color:#88f;
+}
+
+#header .menu ul li:hover a{
+	color:#22f;
+}
+
+#content{
+	width:951px;
+	margin:auto;
+	background-color:#fff;
+	margin-bottom:35px;
+	border: 1px solid #bbb;
+}
+
+.intro{
+	width:950px;
+	display:inline-block;
+	text-align:center;
+}
+
+.info{
+	padding:4px;
+	float:left;
+}
+
+.texte{
+	width:546px;
+	text-align:justify;
+	padding:15px;
+	font-size: 14.8px;
+}
+
+#content .intro h2{
+	font-size: 47px;
+	font-family: 'zeyada', cursive ;
+	margin: 15px;
+}
+
+#footer{
+	position:fixed;
+	bottom:0px;
+	left:0px;
+	border-top:1px solid #bbb;
+	background-color:#fff;
+	height:25px;
+	width:100%;
+	line-height:25px;
+}
+
+#footer .left{
+	width:950px;
+	margin:auto;
+}
+
+#footer .right{
+	float:right;
+}
+
+.img{
+	padding: 4px;
+	float: left;
+}
+
+.carte{
+	display:inline-block;
+	width: 950px;
+}
+
+.carte h1{
+	margin:0px;
+	margin-bottom:35px;
+	margin-top: 20px;
+	float: left;
+	width: 400px;
+	font-size: 5em;
+	text-align: right;
+	font-family: 'Mr De Haviland', cursive;
+}
+
+.plat{
+	width: 640px;
+	text-align: justify;
+}
+
+
+.carte .menu{
+	width: 280px;
+	padding: 20px;
+	padding-left: 75px;
+	border: 1px inset #ddd;
+	margin-left: 130px;
+	background-image: url("../img/bgCarte.png");
+}
+
+.carte .menu ul{
+	list-style: none;
+}
+
+.coordonnees ul{
+	list-style: none;
+}
+
+.coordonnees{
+	margin: 50px;
+}
+
+.coordonnees hr{
+	width: 300px;
+}
+
+.artiste{
+	display: inline-block;
+	width: 950px;
+}
+
+.artiste1{
+	background-image: url(../img/artiste1.jpg);
+	background-repeat: no-repeat;
+	height: 300px;
+	width: 250px;
+	margin-left: 150px;
+	text-align: center;
+	float: left;
+	margin-bottom: 50px;
+	margin-top: 50px;
+	color: white;
+}
+
+.artiste2{
+	background-image: url(../img/artiste2.jpg);
+	background-repeat: no-repeat;
+	height: 300px;
+	width: 250px;
+	margin-right: 150px;
+	text-align: center;
+	float: right;
+	margin-bottom: 50px;
+	margin-top: 50px;
+	color: white;
+}
+
+.artiste3{
+	background-image: url(../img/artiste3.jpg);
+	background-repeat: no-repeat;
+	height: 300px;
+	width: 250px;
+	margin-left: 150px;
+	text-align: center;
+	float: left;
+	margin-bottom: 30px;
+	color: white;
+}
+
+.artiste4{
+	background-image: url(../img/artiste4.jpg);
+	background-repeat: no-repeat;
+	height: 300px;
+	width: 250px;
+	margin-right: 150px;
+	text-align: center;
+	float: right;
+	margin-bottom: 30px;
+	color: white;
+}
+
+.artiste1 a{
+	text-decoration: none;
+	color: white;
+}
+
+.artiste1 h3 a{
+	color: black;
+}
+
+.artiste3 h3 a{
+	color: black;
+}
+
+.artiste2 a{
+	text-decoration: none;
+	color: white;
+}
+
+.artiste4 a{
+	text-decoration: none;
+	color: white;
+}
+
+.artiste3 a{
+	text-decoration: none;
+	color: white;
+}
+
+.artiste p{
+	opacity: 0;
+	background-color:rgba(0,0,0,.3);
+}
+
+.artiste1:hover p{
+	opacity: 1;
+}
+
+.artiste2:hover p{
+	opacity: 1;
+}
+
+.artiste3:hover p{
+	opacity: 1;
+}
+
+.artiste4:hover p{
+	opacity: 1;
+}
+
+.article
+{
+	display : inline-block ;
+	width : 951px ;
+	height : 500 px ;
+}
+
+.article .gauche
+{
+	float : left;
+	width : 400px;
+}
+
+.article .droite
+{
+	float : right;
+	width : 400px ;
+}
+
+.article .droite
+{
+	margin : 35px;
+}
+
+.article .gauche
+{
+	margin : 35px;
+}
+
+#content h1
+{
+	font-family: 'zeyada', cursive ;
+	font-size : 55px ;
+}
+
+#content h2
+{
+	font-family: 'zeyada', cursive ;
+	font-size : 35px ;
+}
+
+.article h2
+{
+	margin : 0px;
+}
