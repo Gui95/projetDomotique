@@ -35,12 +35,12 @@
 							<legend>Choix de la période</legend>
 								<div class="radiobutton1">
 									<input id="per-year" 	type="radio" name="date" value="Par-année" checked /> Par année</br>
-									<dd><input type="number" min="2010" max="2020" /></dd>
+									<dd><input id="date_annee" type="number" min="2010" max="2020" /></dd>
 								</div> <!-- fin de la div radiobutton1 -->
 								
 								<div class="radiobutton2">
 									<input id="other-date"  type="radio" name="date" value="Autre-période" /> Autre période
-										<dd>Du <input type="date" min="2010-01-01" max="2020-12-31" /> Au <input type="date" min="2010-01-01" max="2020-12-31" /></dd>
+										<dd>Du <input id="date_debut" type="date" min="2010-01-01" max="2020-12-31" /> Au <input id="date_fin" type="date" min="2010-01-01" max="2020-12-31" /></dd>
 								</div><!-- fin de la div radiobutton2 -->
 						</fieldset>
 
@@ -72,13 +72,18 @@
 								</div> <!-- fin de la div radiobutton3 -->
 						</fieldset>
 					</form>
+					<input id="valider" type="button" name="lien1" value="Valider" style="background-color:white" style="color:white; font-weight:bold"onclick> 
 				</div> <!-- fin de la div form-sensor -->
+				
+				
 			</div> <!-- fin de la div form-graph -->
 			
 			<div id="graph">
 
 				<div id="container" style="min-width: 400px; height: 400px; margin: 0 auto"></div>
 			</div> <!-- fin de la div graph -->
+			
+			
 
 		</div> <!-- FIN CONTENT -->
 		<!-- FIN FOOTER -->
