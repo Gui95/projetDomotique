@@ -6,8 +6,9 @@ body
 
 #header
 {
-	width:950px;
+	width:100%;
 	margin:auto;
+	background-color:red;
 }
 
 #header .titre
@@ -16,6 +17,7 @@ body
 	font-weight:450;
 	font-size:5em;
 	text-align:center;
+	
 }
 
 #header .titre a
@@ -24,12 +26,13 @@ body
 	text-decoration:none;
 }
 
-#header .menu ul
+#content .menu ul
 {
+	margin-bottom: 15px;
 	text-align : center;
 }
 
-#header .menu ul li{
+#content .menu ul li{
 	display:inline-block;
 	list-style:none;	
 	-webkit-border-radius: 5px;
@@ -43,27 +46,27 @@ body
 	text-decoration : none ;
 	background-color:#ddd;
 	-webkit-transition: background-color;
-	-webkit-transition:0.5s;
+	-webkit-transition:0.2s;
 	-moz-transition: background-color;
-	-webkit-transition:0.5s;
+	-webkit-transition:0.2s;
 	-ms-transition: background-colors;
-	-webkit-transition:0.5s;
+	-webkit-transition:0.2s;
 }
 
-#header .menu ul li:hover
+#content .menu ul li:hover
 {
-	background-color:#999;
+	background-color:#ddd;
 }
 
-#header .menu ul li a
+#content .menu ul li a
 {
 	text-decoration:none;
-	color:#88f;
+	color:black;
 }
 
-#header .menu ul li:hover a
+#content .menu ul li:hover a
 {
-	color:#22f;
+	color:#555;
 }
 
 #content
@@ -131,9 +134,3 @@ body
 	padding-left: 80px;
 	display: inline;
 }
-
-/*#content>#graph
-{
-	width:800px;
-	background-color: blue; 
-}*/
