@@ -1,6 +1,7 @@
 body
 {
-	background-image:url("../img/fond.png");
+	/*background-image:url("../img/fond.png");*/
+	background-color: #353535;
 	font-family : verdana, sans-serif;
 }
 
@@ -93,6 +94,10 @@ body
 {
 	font-weight:100;
 	font-weight: bold;
+	border-style:solid;
+	border-color:444;
+	border-width:1px;
+	background-color:#E9E9E9;
 }
 
 #form-sensor
@@ -102,6 +107,7 @@ body
 	display: inline-block;
 	/* border: 3px solid black; */
 	width: 600px;
+	margin-top:10px;
 }
 
 #form-date
@@ -118,19 +124,21 @@ body
 	/* background-color: pink; */
 }
 
-.radiobutton2
-{
-	/* background-color: grey; */
-}
-
-.radiobutton3
-{
-	/* background-color: maroon; */
-}
-
 #graph
 {
 	float: left;
 	padding-left: 80px;
 	display: inline;
+}
+
+#valider
+{
+	font-size: 1em;
+	width:150px;
+	height:30px;
+	color:black;
+	font-weight:bold;
+	border-radius:5px;
+	margin-left:220px;
+	margin-top: 15px;
 }
