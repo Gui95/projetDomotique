@@ -46,30 +46,21 @@
 
 						<fieldset id="form-sensor">
 							<legend>Choix du/des capteurs</legend>
-								<div class="radiobutton1">
-									<input id="per-sensor" 	type="radio" name="sensor" value="Par-capteur" checked /> Par capteur</br>
-										<dd><input type="checkbox" name="capteur1" value="1"> Capteur 1</dd></br>
-										<dd><input type="checkbox" name="capteur2" value="2"> Capteur 2</dd></br>
-										<dd><input type="checkbox" name="capteur3" value="3"> Capteur 3</dd></br>
-										<dd><input type="checkbox" name="capteur4" value="4"> Capteur 4</dd></br>
-										<dd><input type="checkbox" name="capteur5" value="5"> Capteur 5</dd></br>
-								</div> <!-- fin de la div radiobutton1 -->
+								<label for="choix_capteur">Capteur :</label>
+								<input list="capteur" type="text" id="choix_capteur">
+								<datalist id="capteur">
+									<option>Capteur 1
+									<option>Capteur 2
+								</datalist>
 								
-								<div class="radiobutton2">
-									<input id="per-room"  type="radio" name="sensor" value="Par-salle" /> Par salle</br>
-										<dd><input type="checkbox" name="salle1" value="1"> Salle 1</dd></br>
-										<dd><input type="checkbox" name="salle2" value="2"> Salle 2</dd></br>
-										<dd><input type="checkbox" name="salle3" value="3"> Salle 3</dd></br>
-										<dd><input type="checkbox" name="salle4" value="4"> Salle 4</dd></br>
-										<dd><input type="checkbox" name="salle5" value="5"> Salle 5</dd></br>
-								</div> <!-- fin de la div radiobutton2 -->
-								
-								<div class="radiobutton3">
-									<input id="other-room"  type="radio" name="sensor" value="Par-capteur" /> Par type de capteur</br>
-										<dd><input type="checkbox" name="Compteur" value="1"> Compteur</dd></br>
-										<dd><input type="checkbox" name="Mesure" value="2"> Mesure</dd></br>
-										<dd><input type="checkbox" name="Boolean" value="3"> Boolean</dd></br>
-								</div> <!-- fin de la div radiobutton3 -->
+								<label for="choix_piece">Pièce :</label>
+								<input list="piece" type="text" id="choix_piece">
+								<datalist id="piece">
+									<option>Chambre 1
+									<option>Chambre 2
+									<option>Salon
+									<option>Cuisine
+								</datalist>
 						</fieldset>
 					</form>
 					<input id="valider" type="button" name="lien1" value="Valider" style="background-color:white" style="color:white; font-weight:bold"onclick> 
