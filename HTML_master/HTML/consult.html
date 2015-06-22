@@ -3,19 +3,20 @@
 	<head>
 		<title>Domotique</title>
 		<meta charset="utf-8" />  
+		<img src="img/testbanniere.png"/>
 		<link rel="stylesheet" type="text/css" href="style/style.css" />
 		<link href='http://fonts.googleapis.com/css?family=Mr+De+Haviland' rel='stylesheet' type='text/css'>
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 		<script type="text/javascript" src="http://code.highcharts.com/highcharts.js"></script>
-		<script type="text/javascript" src="../javaScript/domotique.js" ></script> 
+		<script type="text/javascript" src="./domotique.js" ></script> 
 		<script type="text/javascript" src="../javaScript/utils.js" ></script> 
 	</head>
 	<body>
 		<!-- HEADER -->
-		<div id="header">
+		<!--<div id="header">
 			<div class="titre">
 				<a href="home.html">Domotique</a>
-			</div> <!-- fin de la div titre -->
+			</div> 
 
 			
 		</div> <!-- fin de la div header -->
@@ -34,14 +35,14 @@
 			<div id="form-graph">
 					<form>
 						<fieldset id="form-date">
-							<legend>Choix de la période</legend>
+							<legend>Choix de la pÃ©riode</legend>
 								<div class="radiobutton1">
-									<input id="per-year" 	type="radio" name="date" value="Par-année" checked /> Par année</br>
+									<input id="per-year" 	type="radio" name="date" value="Par-annÃ©e" checked /> Par annÃ©e</br>
 									<dd><input id="date_annee" type="number" min="2010" max="2020" /></dd>
 								</div> <!-- fin de la div radiobutton1 -->
 								
 								<div class="radiobutton2">
-									<input id="other-date"  type="radio" name="date" value="Autre-période" /> Autre période
+									<input id="other-date"  type="radio" name="date" value="Autre-pÃ©riode" /> Autre pÃ©riode
 										<dd>Du <input id="date_debut" type="date" min="2010-01-01" max="2020-12-31" /> Au <input id="date_fin" type="date" min="2010-01-01" max="2020-12-31" /></dd>
 								</div><!-- fin de la div radiobutton2 -->
 						</fieldset>
@@ -49,7 +50,7 @@
 						<fieldset id="form-sensor">
 							<legend>Choix du/des capteurs</legend>
 								<label for="choix_capteur">Capteur :</label>
-									<dd><div style="overflow:scroll;height:55px;width:400px;"> 
+									<dd><div style="overflow:scroll;height:77px;width:300px;"> 
 										 <input type="checkbox" name="chk" id="c1"/> 
 											<label for="c1">Capteur 1</label><br /> 
 										 <input type="checkbox" name="chk" id="c2"/> 
@@ -62,26 +63,23 @@
 											<label for="c5">Capteur 5</label><br /> 
 									</div></dd>
 								
-								<label for="choix_piece">Pièce :</label>
-									<dd><div style="overflow:scroll;height:55px;width:400px;"> 
+								<label for="choix_piece">PiÃ¨ce :</label>
+									<dd><div style="overflow:scroll;height:77px;width:300px;"> 
 										 <input type="checkbox" name="chk" id="c1"/> 
 											<label for="c1">Chambre enfant</label><br /> 
 										 <input type="checkbox" name="chk" id="c2"/> 
 											<label for="c2">Chambre parents</label><br /> 
 										 <input type="checkbox" name="chk" id="c3"/> 
-											<label for="c3">Cuisine 3</label><br /> 
+											<label for="c3">Cuisine </label><br /> 
 										 <input type="checkbox" name="chk" id="c4"/> 
 											<label for="c4">Salon</label><br /> 
 										 <input type="checkbox" name="chk" id="c5"/> 
 											<label for="c5">Salle de bain</label><br /> 
 									</div></dd>
-								<input list="piece" type="text" id="choix_piece">
 						</fieldset>
-						
 					</form>
 					<input id="valider" type="button" name="lien1" value="Valider"> 
 				</div> <!-- fin de la div form-sensor -->
-				
 				
 			</div> <!-- fin de la div form-graph -->
 			
