@@ -1,6 +1,6 @@
 body
 {
-	background-image:url("../img/bg.jpg");
+	background-image:url("../img/fond.png");
 	font-family : verdana, sans-serif;
 }
 
@@ -73,7 +73,7 @@ body
 	margin:auto;
 	margin-bottom:35px;
 	border: 1px solid #bbb;
-	display: inline-block;
+	display: inline;
 	/* background-color:purple; */
 }
 
@@ -82,7 +82,8 @@ body
 	width: 600px;
 	height: 400px;
 	float:left;
-	display: block;
+	padding-top:50px;
+	display: inline;
 }
 
 #form-graph legend
@@ -124,8 +125,15 @@ body
 	/* background-color: maroon; */
 }
 
-#content>#graph
+#graph
 {
-	width:400px;
-	/* background-color: blue; */
+	float: left;
+	padding-left: 80px;
+	display: inline;
 }
+
+/*#content>#graph
+{
+	width:800px;
+	background-color: blue; 
+}*/
