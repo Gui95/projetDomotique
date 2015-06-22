@@ -1,8 +1,0 @@
-{
-journee{
- 	id: 1,
- 	piece: 2,
- 	timestamp: 1111111111,
- 	etat: 0,
- }
-}
