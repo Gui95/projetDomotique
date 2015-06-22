@@ -7,8 +7,8 @@
 		<link href='http://fonts.googleapis.com/css?family=Mr+De+Haviland' rel='stylesheet' type='text/css'>
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 		<script type="text/javascript" src="http://code.highcharts.com/highcharts.js"></script>
-		<script type="text/javascript" src="../javaScript/domotique.js" ></script> 
-		<script type="text/javascript" src="../javaScript/utils.js" ></script> 
+		<script type="text/javascript" src="./domotique.js" ></script> 
+		<script type="text/javascript" src="./utils.js" ></script> 
 	</head>
 	<body>
 		<!-- HEADER -->
@@ -47,21 +47,35 @@
 						<fieldset id="form-sensor">
 							<legend>Choix du/des capteurs</legend>
 								<label for="choix_capteur">Capteur :</label>
-								<input list="capteur" type="text" id="choix_capteur">
-								<datalist id="capteur">
-									<option>Capteur 1
-									<option>Capteur 2
-								</datalist>
+									<dd><div style="overflow:scroll;height:55px;width:400px;"> 
+										 <input type="checkbox" name="chk" id="c1"/> 
+											<label for="c1">Capteur 1</label><br /> 
+										 <input type="checkbox" name="chk" id="c2"/> 
+											<label for="c2">Capteur 2</label><br /> 
+										 <input type="checkbox" name="chk" id="c3"/> 
+											<label for="c3">Capteur 3</label><br /> 
+										 <input type="checkbox" name="chk" id="c4"/> 
+											<label for="c4">Capteur 4</label><br /> 
+										 <input type="checkbox" name="chk" id="c5"/> 
+											<label for="c5">Capteur 5</label><br /> 
+									</div></dd>
 								
 								<label for="choix_piece">Pièce :</label>
+									<dd><div style="overflow:scroll;height:55px;width:400px;"> 
+										 <input type="checkbox" name="chk" id="c1"/> 
+											<label for="c1">Chambre enfant</label><br /> 
+										 <input type="checkbox" name="chk" id="c2"/> 
+											<label for="c2">Chambre parents</label><br /> 
+										 <input type="checkbox" name="chk" id="c3"/> 
+											<label for="c3">Cuisine 3</label><br /> 
+										 <input type="checkbox" name="chk" id="c4"/> 
+											<label for="c4">Salon</label><br /> 
+										 <input type="checkbox" name="chk" id="c5"/> 
+											<label for="c5">Salle de bain</label><br /> 
+									</div></dd>
 								<input list="piece" type="text" id="choix_piece">
-								<datalist id="piece">
-									<option>Chambre 1
-									<option>Chambre 2
-									<option>Salon
-									<option>Cuisine
-								</datalist>
 						</fieldset>
+						
 					</form>
 					<input id="valider" type="button" name="lien1" value="Valider" style="background-color:white" style="color:white; font-weight:bold"onclick> 
 				</div> <!-- fin de la div form-sensor -->
@@ -71,7 +85,7 @@
 			
 			<div id="graph">
 
-				<div id="container" style="min-width: 400px; height: 400px; margin: 0 auto"></div>
+				<div id="container" style="min-width: 800px; height: 400px; margin: 0 auto"></div>
 			</div> <!-- fin de la div graph -->
 			
 			
