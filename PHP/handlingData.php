@@ -1,26 +1,46 @@
 <?php
 
-$conn = pg_pconnect("host=localhost port=5432 dbname=domotique");
-if (!$conn) {
-  echo "Une erreur s'est produite lors de la connexion Ã  la base.\n";
-  exit;
-}
-
-$result = pg_query($conn, call proc(($_GET["dateDebut"], $_GET["dateFin"]);
-if (!$result) {
-  echo "Une erreur s'est produite lors de l'exÃ©cution de la procÃ©dure stockÃ©e.\n";
-  exit;
-}
-
-while ($row = pg_fetch_row($result)) {
-
-	//crÃ©er 3 var (un pour chaque type), les implÃ©menter avec une ligne d'html en + (diplay invisible)
-	//crÃ©er les fonctions de moyennes
-  echo "Auteur: $row[0]  E-mail: $row[1]";
-  echo "<br />\n";
-}
-
+	/*Variables
+	*	Ici $res servira (aussi) à renvoyer les erreurs au js du code
+	*	1 : erreur lors de la connexion à la base
+	*	2 : erreur lors de l'exécution de la query
+	*/
+	$res = null;
+	$checkboxesVal = "";
+	$conn = pg_pconnect("host=localhost port=5432 dbname=domotique");
 	
+	//vérification de la connexion
+	if (!$conn) {
+	  $res = 1;
+	  exit;
+	}
+	//conditions pour lancer le traitement des données
+	$condition = (isset($_POST['date_debut']) && isset($_POST['date_fin'])) || (isset($_POST['mon_identifiant_de_checkbox']));
+
+	if($condition){
+		
+		//1 On charge les params boxes checked
+		foreach($_POST['mon_identifiant_de_checkbox'] as $valeur){
+			if($checkboxesVal == "")
+				$checkboxesVal = $checkboxesVal . $valeur;
+			else
+				$checkboxesVal = $checkboxesVal . ', ' . $valeur;
+		}
+		
+		$result = pg_query($conn, call proc(($_GET["dateDebut"], $_GET["dateFin"], $checkboxesVal);
+		if (!$result) {
+		  $res = 2;
+		  exit;
+		}
+
+		$res = "{ ";
+		while ($row = pg_fetch_row($result)) {
+
+		  $res = $res . " timestamp = ". $row[0] .",  id_capteur =". $row[1];
+		}
+	}
+
+	//partie de HUUUUUUUUUUUUUUUUUUUUUUUUUUUUUSCH
 	function timeStampToDate($timestamp)
 	{
 		$date = date('d/m/Y', $timestamp);
