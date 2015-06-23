@@ -20,14 +20,6 @@ while ($row = pg_fetch_row($result)) {
   echo "<br />\n";
 }
 
-	function dateTotimeStamp($maDate)
-	{
-		$maDate = maDate +'';
-		$maDate = explode("-", $maDate);
-		$nouvelleDate = $maDate[0] + "-" + $maDate[1] + "-" + $maDate[2];
-		$timeStampDate = date_timestamp_get($maDate);
-		return $timeStampDate;
-	}
 	
 	function timeStampToDate($timestamp)
 	{
