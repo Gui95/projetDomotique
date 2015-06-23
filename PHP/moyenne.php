@@ -1,11 +1,11 @@
 <?php
 /**
-  * Fonction moyennne
-  * prend en parametre un array 'data' de type "timestamp" => valeur
-  * renvoie la moyenne
+ * Fonction moyennne
+ * prend en parametre un array 'data' de type "timestamp" => valeur
+ * renvoie la moyenne
  **/
 
-//function moyenne($data, $dateFin) {
+//function moyenneTemp($data, $dateFin) {
 	
 	/* POUR TEST
 	$data = array(
@@ -48,6 +48,18 @@
 	//echo $moyenne;
 	return $moyenne;
 	
-//}
+}
+
+/**
+ * Attend un array. renvoie la moyenne normale, sans tenir compte du temps.
+ **/
+function moyenne($data) {
+	$somme = array_sum($data);
+	$count = array_count_values($data);
+	
+	$moyenne = $somme/$count;
+	
+	return $moyenne;
+}
 
 ?>
