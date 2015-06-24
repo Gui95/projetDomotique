@@ -3,37 +3,33 @@
 	<head>
 		<title>Domotique</title>
 		<meta charset="utf-8" />  
-		<img src="img/testbanniere.png"/>
 		<link rel="stylesheet" type="text/css" href="style/style.css" />
 		<link href='http://fonts.googleapis.com/css?family=Mr+De+Haviland' rel='stylesheet' type='text/css'>
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 		<script type="text/javascript" src="http://code.highcharts.com/highcharts.js"></script>
-		<script type="text/javascript" src="../javaScript/domotique.js" ></script> 
-		<script type="text/javascript" src="../javaScript/utils.js" ></script> 
+		<script type="text/javascript" src="javaScript/domotique.js" ></script> 
+		<script type="text/javascript" src="javaScript/utils.js" ></script> 
 	</head>
 	<body>
-		<!-- HEADER -->
-		<!--<div id="header">
+				<!-- HEADER -->
+		<div id="header">
 			<div class="titre">
 				<a href="home.html">Domotique</a>
-			</div> 
-
-			
-		</div> <!-- fin de la div header -->
+			</div>
+			<div class="menu">
+				<ul>
+					<li><a href="Home.html">Accueil</a></li>
+					<li><a href="consult.html">Données </a></li>
+				</ul>
+			</div>
+		</div>
 		<!-- FIN HEADER -->
 		
 		<!-- CONTENT -->
-		<div id="content">
-		
-			<div class="menu">
-				<ul>
-					<li><a href="home.html">Accueil</a></li>
-					<li><a href="consult.html">Consulter</a></li>
-				</ul>
-			</div> <!-- fin de la div menu -->
+		<div id="content2">
 			
 			<div id="form-graph">
-					<form>
+					<form method="POST" action="handlindData.php">
 						<fieldset id="form-date">
 							<legend>Choix de la période</legend>
 								<div class="radiobutton1">
@@ -78,10 +74,10 @@
 									</div></dd>
 						</fieldset>
 					</form>
-					<input id="valider" type="button" name="lien1" value="Valider"> 
+					<div id="soumission"><input id="valider" type="button" name="lien1" value="Valider"></div>
 				</div> <!-- fin de la div form-sensor -->
 				
-			</div> <!-- fin de la div form-graph -->
+			
 			
 			<div id="graph">
 
