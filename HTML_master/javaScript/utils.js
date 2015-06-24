@@ -84,6 +84,18 @@ $(function () {
 		
 	});
 	
+	// Affiche les champs à remplir en fonction de l'option cochée
+	$('#per-year').click(function()
+	{
+		$(this).parent().parent().children('.radiobutton2').children('dd').hide();
+		$(this).parent().children().show();
+	});
 	
-	
+	// Affiche les champs à remplir en fonction de l'option cochée
+	$('#other-date').click(function()
+	{
+		$(this).parent().parent().children('.radiobutton1').children('dd').hide();
+		$(this).parent().children().show();
+		$(this).parent().children('dd').css('paddingLeft', '200px');
+	});
 });
