@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -7,8 +8,8 @@
 		<link href='http://fonts.googleapis.com/css?family=Mr+De+Haviland' rel='stylesheet' type='text/css'>
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 		<script type="text/javascript" src="http://code.highcharts.com/highcharts.js"></script>
-		<script type="text/javascript" src="javaScript/domotique.js" ></script> 
-		<script type="text/javascript" src="javaScript/utils.js" ></script> 
+		<!-- <script type="text/javascript" src="javaScript/domotique.js" ></script> -->
+		<!-- <script type="text/javascript" src="javaScript/utils.js" ></script> -->
 	</head>
 	<body>
 				<!-- HEADER -->
@@ -25,12 +26,11 @@
 		</div>
 		<!-- FIN HEADER -->
 		
-		
 		<!-- CONTENT -->
 		<div id="content2">
 			
 			<div id="form-graph">
-					<form method="POST" action="handlindData.php">
+					<form method="POST" action="handlingData.php">
 						<fieldset id="form-date">
 							<legend>Choix de la période</legend>
 								<div class="radiobutton1">
@@ -80,6 +80,7 @@
 <script type="text/javascript">
 	$(function () {
 	
+	/*Test des fonctions de converstion*/
 	var timeStamptest = 1433109600
 	console.log(dateTotimeStamp("06-20-2015"));
 	console.log(timeStampToDate(timeStamptest));
@@ -87,6 +88,63 @@
 	console.log(timeStampDay);
 	console.log(timeStampToDate(timeStampDay));
 	
+	
+	/*Fonction retournant le nombre de jour qu'il y à entre deux dates*/
+	function calculNBJour(dated,datef)
+	{
+		var datedebut = dated.split("-");
+		var datefin = datef.split("-");
+		
+		var jourd = datedebut[2];
+		var jourf = datefin[2];
+		var moisd = datedebut[1];
+		var moisf = datefin[1];
+		
+		var nbjour=0;
+		
+		/*Si le moi de début et le mois de fin sont identique, il suffit de faire la différence entre le jour de début et le jour de fin*/
+		if(moisd == moisf)
+		{
+			nbjour = jourf - jourd;
+			return nbjour;
+		}
+		/*Si la différence des mois est supérieur à 1 et le jour de début est inférieur au jour de fin, 
+				- on ajoute 30 jours tant que les mois sont différents
+				- puis on ajoute un jour tant que les jour sont différents*/
+		if((moisf-moisd)>=1 && jourd<jourf)
+		{
+			while(moisd<moisf)
+			{
+				nbjour += 30;
+				moisd++;
+			}
+			while(jourd<jourf)
+			{
+				nbjour++;
+				jourd++;
+			}
+			return nbjour;
+		}
+		/*Si la différence des mois est supérieur à 1 et le jour de début est supérier au jour de fin, 
+				- on ajoute 30 jours tant que les mois sont différents
+				- puis on retire un jour tant que les jour sont différents*/
+		if((moisf-moisd)>=1 && jourd>jourf)
+		{
+			while(moisd<moisf)
+			{
+				nbjour += 30;
+				moisd++;
+			}
+			while(jourd>jourf)
+			{
+				nbjour--;
+				jourd--;
+			}
+			return nbjour;
+		}
+	}
+	
+	/*Transforme un numéro de moi en son nom en chaine de caractère*/
 	function moistoString(mois)
 	{
 		var stringmois;
@@ -117,6 +175,7 @@
 		return stringmois;
 	}
 	
+	/*Transforme une date en son timeStamp corespondant*/
 	function dateTotimeStamp(maDate)
 	{
 		maDate = maDate + ''
@@ -127,12 +186,14 @@
 		return timeStampDate;
 	}
 	
+	/*Transforme un timeStamp en date*/
 	function timeStampToDate(timestamp)
 	{
 		var date = new Date(timestamp*1000);
 		return date;
 	}
 	
+	/*Si les jours sont identiques, rajoute 23h59min59s*/
 	function timeStampIdenticday(timestamp)
 	{
 		var nouveautimeStamp = timestamp + 86399;
@@ -142,10 +203,12 @@
 	var temp = new Array();
 	$('#valider').mousedown(function()
 	{
+		/*Récupération de la date de début et de la date de fin*/
 		if($('#other-date').is(':checked'))
 		{
 			var datedebut = $('#date_debut').val();
 			var datefin = $('#date_fin').val();
+			/*Test d'affichage des valeurs de début et de fin */
 			console.log(datedebut);
 			console.log((datefin));
 		}
@@ -156,6 +219,7 @@
 			var dateannee = "01-" + "01-" + date;
 			console.log(dateTotimeStamp(dateannee));
 		}
+		/*Instanciation des variable servant à push les données de l'axe x*/
 		var dated = datedebut.split("-");
 		var datef = datefin.split("-");
 		var moisd = dated[1];
@@ -166,8 +230,14 @@
 		var anf = datef[0]
 		var moisdiff = moisf - moisd;
 		var andiff = anf - and;
-
-		if(moisdiff == 0)
+		var nbjour = calculNBJour(datedebut, datefin);
+		/*Test des variables*/
+		console.log(nbjour);
+		console.log(moisdiff);
+		console.log(andiff);
+		console.log(jourd);
+		/*Push des informations de l'axe x en terme de jours et ce jusqu'à un nombre de jours de 14.*/
+		if(moisdiff == 0 && nbjour<=14)
 		{
 			var jouractuelle = jourd;
 			while(jouractuelle <= jourf)
@@ -176,9 +246,40 @@
 				jouractuelle++;
 			}
 		}
-		console.log(moisdiff);
-		console.log(andiff);
-		if(moisdiff>0 && andiff<1)
+		/*Push des informations de l'axe x en terme de semaine et ce jusqu'à un nombre de semaine de 8, soit environ deux mois*/
+		if(nbjour>14 && nbjour<=61)
+		{
+			var semaineactuelle = "Semaine ";
+			var joura = jourd;
+			if(moisdiff>=1 && jourd<jourf)
+			{
+				array.push(semaineactuelle + "1");
+				array.push(semaineactuelle + "2");
+				array.push(semaineactuelle + "3");
+				array.push(semaineactuelle + "4");
+				i="5";
+				joura++;
+				while((joura)<jourf)
+				{
+					array.push(semaineactuelle + i);
+					joura+=7;
+					i++;
+				}
+			}
+			else
+			{
+				i="1";
+				joura++;
+				while(joura<jourf)
+				{	console.log(joura);
+					array.push(semaineactuelle + i);
+					joura+=7;
+					i++;
+				}
+			}
+		}
+		/*Push des informations de l'axe x en terme de mois et ce jusqu'à une année*/
+		if(nbjour>61)
 		{
 			var moisactuel = moisd;
 			while(moisactuel <= moisf)
@@ -188,7 +289,9 @@
 			}
 		}
 		temp=[12,25,32];
+		/*Test de l'array*/
 		console.log(array);
+		/*Mise à jour du graphique*/
 		chartOptions.xAxis.categories=array;
 		chartOptions.series[2].data=temp;
 		chart1 = new Highcharts.Chart(chartOptions);
