@@ -7,7 +7,7 @@
 	*/
 	$res = null;
 	$checkboxesVal = "";
-	$conn = pg_pconnect("host=localhost port=5432 dbname=domotique");
+	$conn = pg_pconnect("host=192.168.1.50 port=5432 dbname=domotique");
 	
 	//vérification de la connexion
 	if (!$conn) {

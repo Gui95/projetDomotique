@@ -1,13 +1,13 @@
-$(function () {
+ï»¿$(function () {
     $('#container').highcharts({
         chart: {
             zoomType: 'xy'
         },
         title: {
-            text: 'Résumé Domotique'
+            text: 'RÃ©sumÃ© Domotique'
         },
         subtitle: {
-            text: 'Sur une période de temps donnée'
+            text: 'Sur une pÃ©riode de temps donnÃ©e'
         },
         xAxis: [{
             categories: [],
@@ -15,7 +15,7 @@ $(function () {
         }],
         yAxis: [{ // Primary yAxis
             labels: {
-                format: '{value}°C',
+                format: '{value}Â°C',
                 style: {
                     color: Highcharts.getOptions().colors[2]
                 }
@@ -101,7 +101,7 @@ $(function () {
             type: 'spline',
             data: [22,24,17,12],
             tooltip: {
-                valueSuffix: ' °C'
+                valueSuffix: ' Â°C'
             }
         }]
     });
