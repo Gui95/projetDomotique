@@ -80,7 +80,7 @@
 <script type="text/javascript">
 	$(function () {
 	
-	/*Test des fonctions de converstion*/
+	/*Test des fonctions de conversion*/
 	var timeStamptest = 1433109600
 	console.log(dateTotimeStamp("06-20-2015"));
 	console.log(timeStampToDate(timeStamptest));
